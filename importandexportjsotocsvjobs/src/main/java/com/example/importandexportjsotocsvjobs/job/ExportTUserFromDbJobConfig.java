@@ -9,13 +9,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ExportTUserFromDbJob {
+public class ExportTUserFromDbJobConfig {
 
   private final JobBuilderFactory jobBuilderFactory;
 
   private final StepBuilderFactory stepBuilderFactory;
 
-  public ExportTUserFromDbJob(JobBuilderFactory jobBuilderFactory
+  public ExportTUserFromDbJobConfig(JobBuilderFactory jobBuilderFactory
           , StepBuilderFactory stepBuilderFactory) {
     this.jobBuilderFactory = jobBuilderFactory;
     this.stepBuilderFactory = stepBuilderFactory;
