@@ -5,10 +5,10 @@ import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-@ConfigurationProperties
+@Configuration
 public class ExportTUserFromDbJob {
 
   private final JobBuilderFactory jobBuilderFactory;
@@ -35,6 +35,5 @@ public class ExportTUserFromDbJob {
             .tasklet(null)
             .build();
   }
-
 
 }
