@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ImportTUserFromJsonJob {
+public class ImportTUserFromJsonJobConfig {
 
   private final JobBuilderFactory jobBuilderFactory;
 
@@ -22,7 +22,7 @@ public class ImportTUserFromJsonJob {
 
   private final JdbcBatchItemWriter<TUser> sampleJsonWriter;
 
-  public ImportTUserFromJsonJob(JobBuilderFactory jobBuilderFactory
+  public ImportTUserFromJsonJobConfig(JobBuilderFactory jobBuilderFactory
           , StepBuilderFactory stepBuilderFactory
           , @Qualifier("sampleJsonReader") JsonItemReader<TUser> sampleJsonReader
           , @Qualifier("sampleJsonWriter") JdbcBatchItemWriter<TUser> sampleJsonWriter) {
@@ -33,8 +33,8 @@ public class ImportTUserFromJsonJob {
   }
 
   @Bean
-  public Job importTUserFromJonJob() {
-    return jobBuilderFactory.get("importTUserFromJonJob")
+  public Job importTUserFromJsonJob() {
+    return jobBuilderFactory.get("importTUserFromJsonJob")
             .start(importTUserFromJobStep())
             .build();
   }
