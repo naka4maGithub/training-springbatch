@@ -1,0 +1,7 @@
+IntelliJ IDEA の Run Configurations の Program Arguments には以下の引数を指定することでそれぞれのジョブを単独で実行できるようにする
+
+# JSON ファイルから DB へインポートするジョブ
+--spring.batch.job.names=importTUserFromJsonJob jsonFilePath="D:\__work\exportJob\sample.json"
+
+# DB から JSON ファイルへエクスポートするジョブ
+--spring.batch.job.names=exportTUserFromDbJob
